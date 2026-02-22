@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spirit Breathwork - Bali Facilitator Training Level 1 | June 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --forest: #5e694a;
+            --forest-light: #7a8562;
+            --deep-purple: #3b1d82;
+            --purple-light: #5a3da6;
+            --accent: #e7015e;
+            --warm-tan: #a87e61;
+            --charcoal: #1a1a2e;
+            --cream: #faf8f5;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            color: var(--charcoal);
+            background: var(--cream);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--deep-purple) 0%, var(--forest) 50%, var(--warm-tan) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 30% 70%, rgba(255,255,255,0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(255,255,255,0.08) 0%, transparent 40%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            display: block;
+            font-weight: 300;
+            font-size: 0.5em;
+            letter-spacing: 2px;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .hero-details {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-detail {
+            text-align: center;
+        }
+
+        .hero-detail .icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .hero-detail .label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.7;
+        }
+
+        .hero-detail .value {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(231, 1, 94, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(231, 1, 94, 0.5);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--charcoal);
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--forest);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--charcoal);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            font-weight: 300;
+        }
+
+        /* JOURNEY */
+        .journey {
+            background: var(--white);
+        }
+
+        .journey-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .journey-card {
+            padding: 2rem;
+            border-radius: 16px;
+            background: var(--cream);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .journey-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .journey-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--deep-purple), var(--forest));
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .journey-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--charcoal);
+        }
+
+        .journey-card p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* INCLUDES */
+        .includes {
+            background: linear-gradient(135deg, var(--charcoal) 0%, #2a1a4e 100%);
+            color: var(--white);
+        }
+
+        .includes .section-label { color: var(--warm-tan); }
+        .includes .section-title { color: var(--white); }
+        .includes .section-subtitle { color: rgba(255,255,255,0.7); }
+
+        .includes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .include-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.25rem;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .include-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--forest), var(--forest-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.1rem;
+        }
+
+        .include-text h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .include-text p {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            line-height: 1.5;
+        }
+
+        /* PRICING */
+        .pricing {
+            background: var(--white);
+            text-align: center;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 950px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .price-card {
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            border: 2px solid rgba(0,0,0,0.06);
+            background: var(--cream);
+            transition: all 0.3s ease;
+        }
+
+        .price-card.featured {
+            border-color: var(--deep-purple);
+            background: var(--white);
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(59, 29, 130, 0.15);
+        }
+
+        .price-card .tier-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--forest);
+            font-weight: 600;
+        }
+
+        .price-card.featured .tier-label {
+            color: var(--deep-purple);
+        }
+
+        .price-card .price {
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 0.75rem 0;
+            color: var(--charcoal);
+        }
+
+        .price-card .price small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #999;
+        }
+
+        .price-card .price-note {
+            font-size: 0.85rem;
+            color: #999;
+            margin-bottom: 1.5rem;
+        }
+
+        .sold-out {
+            display: inline-block;
+            background: #f0f0f0;
+            color: #999;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: line-through;
+        }
+
+        .price-card .btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        .limited-badge {
+            display: inline-block;
+            background: rgba(231, 1, 94, 0.1);
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* TESTIMONIALS */
+        .testimonials {
+            background: var(--cream);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            padding: 2rem;
+            border-radius: 16px;
+            background: var(--white);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+        }
+
+        .stars {
+            color: #f4c430;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-card blockquote {
+            font-size: 1rem;
+            font-style: italic;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--charcoal);
+        }
+
+        .testimonial-role {
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        /* ABOUT DAN */
+        .about {
+            background: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .about-image {
+            width: 100%;
+            aspect-ratio: 3/4;
+            border-radius: 20px;
+            background: linear-gradient(135deg, var(--deep-purple), var(--forest));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            color: #555;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        /* FAQ */
+        .faq {
+            background: var(--cream);
+        }
+
+        .faq-list {
+            max-width: 750px;
+            margin: 3rem auto 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            padding: 1.5rem 0;
+        }
+
+        .faq-item summary {
+            font-weight: 600;
+            font-size: 1.05rem;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-item summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--forest);
+        }
+
+        .faq-item[open] summary::after {
+            content: '-';
+        }
+
+        .faq-item p {
+            margin-top: 1rem;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, var(--deep-purple) 0%, var(--forest) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .cta h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 500px;
+            margin: 0 auto 2.5rem;
+            font-weight: 300;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--charcoal);
+            color: rgba(255,255,255,0.5);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--warm-tan);
+            text-decoration: none;
+        }
+
+        /* DEMO BANNER */
+        .demo-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, var(--accent), #ff4081);
+            color: white;
+            text-align: center;
+            padding: 0.8rem 1rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            z-index: 1000;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+        }
+
+        .demo-banner a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .price-card.featured {
+                transform: scale(1);
+            }
+            .hero-details {
+                gap: 1rem;
+            }
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-content > * {
+            animation: fadeUp 0.8s ease-out forwards;
+        }
+
+        .hero-content > *:nth-child(2) { animation-delay: 0.1s; }
+        .hero-content > *:nth-child(3) { animation-delay: 0.2s; }
+        .hero-content > *:nth-child(4) { animation-delay: 0.3s; }
+        .hero-content > *:nth-child(5) { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+
+<!-- DEMO BANNER -->
+<div class="demo-banner">
+    This page was custom-built for Spirit Breathwork by <a href="https://aiwithsoul.com">AI with Soul</a> - Want one for your business? Book a chat with us.
+</div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-badge">Spirit Breathwork</div>
+        <h1>Bali Facilitator Training
+            <span>Level 1 - Immersive 5-Night Retreat</span>
+        </h1>
+        <p>Transform your breathwork practice into a thriving facilitation career. Learn from Australia's leading breathwork practitioner in the heart of Bali.</p>
+
+        <div class="hero-details">
+            <div class="hero-detail">
+                <div class="icon">&#127796;</div>
+                <div class="value">June 17 - 22, 2026</div>
+                <div class="label">Dates</div>
+            </div>
+            <div class="hero-detail">
+                <div class="icon">&#127965;</div>
+                <div class="value">Komune Resort, Bali</div>
+                <div class="label">Location</div>
+            </div>
+            <div class="hero-detail">
+                <div class="icon">&#9734;</div>
+                <div class="value">5 Nights All-Inclusive</div>
+                <div class="label">Duration</div>
+            </div>
+        </div>
+
+        <a href="#pricing" class="btn btn-primary">Reserve Your Spot</a>
+    </div>
+</section>
+
+<!-- JOURNEY -->
+<section class="journey">
+    <div class="container">
+        <div class="section-label">Your Transformation</div>
+        <h2 class="section-title">The Journey</h2>
+        <p class="section-subtitle">Four phases designed to take you from practitioner to confident facilitator.</p>
+
+        <div class="journey-grid">
+            <div class="journey-card">
+                <div class="journey-number">1</div>
+                <h3>Detoxification</h3>
+                <p>Release trapped emotions and personal traumas. Clear the vessel so you can hold space for others with integrity and presence.</p>
+            </div>
+            <div class="journey-card">
+                <div class="journey-number">2</div>
+                <h3>Breathe</h3>
+                <p>Learn the Spirit Breathwork fundamentals. Experience guided sessions that deepen your understanding of the modality from the inside out.</p>
+            </div>
+            <div class="journey-card">
+                <div class="journey-number">3</div>
+                <h3>Practice</h3>
+                <p>Facilitate your first 1:1 Spirit Breathwork session. Celebrate your transformation with music, dance, and a fire ceremony under the Bali sky.</p>
+            </div>
+            <div class="journey-card">
+                <div class="journey-number">4</div>
+                <h3>Integration</h3>
+                <p>Learn the business side - legal requirements, marketing strategies, social media, and how to build a sustainable breathwork practice.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="includes">
+    <div class="container">
+        <div class="section-label">Everything You Need</div>
+        <h2 class="section-title">What's Included</h2>
+        <p class="section-subtitle">Your only job is to show up. We've taken care of everything else.</p>
+
+        <div class="includes-grid">
+            <div class="include-item">
+                <div class="include-icon">&#127968;</div>
+                <div class="include-text">
+                    <h4>5 Nights Luxury Accommodation</h4>
+                    <p>Twin share at Komune Resort & Beach Club. Single rooms available.</p>
+                </div>
+            </div>
+            <div class="include-item">
+                <div class="include-icon">&#127860;</div>
+                <div class="include-text">
+                    <h4>All Meals Included</h4>
+                    <p>Nourishing, wholesome meals prepared with love throughout your stay.</p>
+                </div>
+            </div>
+            <div class="include-item">
+                <div class="include-icon">&#128218;</div>
+                <div class="include-text">
+                    <h4>Online Training Portal</h4>
+                    <p>Pre-retreat access to exclusive online training materials and preparation.</p>
+                </div>
+            </div>
+            <div class="include-item">
+                <div class="include-icon">&#128221;</div>
+                <div class="include-text">
+                    <h4>Printed Workbook</h4>
+                    <p>Comprehensive training workbook to guide you through every session.</p>
+                </div>
+            </div>
+            <div class="include-item">
+                <div class="include-icon">&#128663;</div>
+                <div class="include-text">
+                    <h4>Airport Transfers</h4>
+                    <p>Seamless pickup and drop-off so you can focus on the experience.</p>
+                </div>
+            </div>
+            <div class="include-item">
+                <div class="include-icon">&#127926;</div>
+                <div class="include-text">
+                    <h4>Sound & Energy Work</h4>
+                    <p>Alchemy of sound, trauma release techniques, and intuitive energy channeling.</p>
+                </div>
+            </div>
+            <div class="include-item">
+                <div class="include-icon">&#127793;</div>
+                <div class="include-text">
+                    <h4>Daily Embodiment Practices</h4>
+                    <p>Breathwork, movement, connection, affirmations, and self-love rituals.</p>
+                </div>
+            </div>
+            <div class="include-item">
+                <div class="include-icon">&#128188;</div>
+                <div class="include-text">
+                    <h4>Business Setup Training</h4>
+                    <p>Legal requirements, client acquisition, social media strategy, and practice building.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+    <div class="container">
+        <div class="section-label">Investment</div>
+        <h2 class="section-title">Choose Your Tier</h2>
+        <p class="section-subtitle" style="margin: 0 auto 1rem;">Limited spaces - once they're gone, they're gone.</p>
+
+        <div class="pricing-grid">
+            <div class="price-card">
+                <div class="tier-label">Early Bird</div>
+                <div class="price">$3,750 <small>AUD</small></div>
+                <div class="price-note">Best value - limited allocation</div>
+                <span class="sold-out">Sold Out</span>
+            </div>
+
+            <div class="price-card featured">
+                <span class="limited-badge">Limited Spaces</span>
+                <div class="tier-label">Second Release</div>
+                <div class="price">$3,999 <small>AUD</small></div>
+                <div class="price-note">Save $501 off full price</div>
+                <a href="#book" class="btn btn-primary">Book a Call</a>
+            </div>
+
+            <div class="price-card">
+                <div class="tier-label">Full Price</div>
+                <div class="price">$4,500 <small>AUD</small></div>
+                <div class="price-note">Standard registration</div>
+                <a href="#book" class="btn btn-primary" style="background: var(--forest);">Book a Call</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+    <div class="container">
+        <div class="section-label">Real Experiences</div>
+        <h2 class="section-title">What People Are Saying</h2>
+
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"The training completely transformed my understanding of breathwork. Dan creates a space where you feel safe to go deep and emerge stronger. I left Bali with absolute clarity on my path as a facilitator."</blockquote>
+                <div class="testimonial-author">Sarah K.</div>
+                <div class="testimonial-role">Now facilitating weekly circles in Melbourne</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"I came for the certification and left with a completely new relationship with my breath and my purpose. The business training alone was worth the investment - I booked my first three clients within a week of returning home."</blockquote>
+                <div class="testimonial-author">James L.</div>
+                <div class="testimonial-role">Breathwork Facilitator, Gold Coast</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"The setting, the people, the teaching - everything was next level. Dan has this incredible ability to guide you through your own resistance and into your power. Cannot recommend this enough."</blockquote>
+                <div class="testimonial-author">Megan R.</div>
+                <div class="testimonial-role">Yoga Teacher & Breathwork Practitioner, Sydney</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT DAN -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-image">&#127793;</div>
+            <div class="about-text">
+                <div class="section-label">Your Guide</div>
+                <h3>Daniel Pauro</h3>
+                <p>Daniel is one of Australia's leading breathwork practitioners, known for his ability to create deeply transformative experiences that blend ancient wisdom with modern facilitation techniques.</p>
+                <p>With years of experience guiding hundreds of practitioners through their breathwork journey, Daniel brings a grounded, heart-centred approach to every session. His training goes beyond technique - it's about building the confidence, presence, and business skills to create a thriving practice.</p>
+                <p>His facilitation style combines trauma-informed practices, sound healing, and energy work to create a complete toolkit for modern breathwork facilitators.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+    <div class="container">
+        <div class="section-label" style="text-align:center;">Common Questions</div>
+        <h2 class="section-title" style="text-align:center;">FAQ</h2>
+
+        <div class="faq-list">
+            <details class="faq-item">
+                <summary>Do I need prior breathwork experience?</summary>
+                <p>A personal breathwork practice is recommended but not required. The pre-retreat online portal will help you prepare regardless of your current experience level.</p>
+            </details>
+            <details class="faq-item">
+                <summary>What if I can't make these dates?</summary>
+                <p>If you need to transfer your booking to a future retreat, this is possible with an admin fee. Spots are non-refundable but transferable.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Is accommodation shared or private?</summary>
+                <p>Standard accommodation is twin share at Komune Resort. Single rooms are available at an additional cost - just mention this when booking your call.</p>
+            </details>
+            <details class="faq-item">
+                <summary>What happens after the training?</summary>
+                <p>You'll leave as a certified Level 1 Spirit Breathwork Facilitator with the tools, confidence, and business knowledge to start facilitating immediately. Ongoing community support is included.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Can I pay in instalments?</summary>
+                <p>Payment plans are available. Book a call with the Spirit team to discuss options that work for your situation.</p>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="book">
+    <div class="container">
+        <h2>Ready to Begin?</h2>
+        <p>Spaces are limited. Book a call with the Spirit team to secure your spot and ask any questions.</p>
+        <a href="https://spiritbreathwork.com.au/" class="btn btn-primary" style="font-size: 1.1rem; padding: 1.2rem 3rem;">Book Your Call Today</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>Spirit Breathwork &copy; 2026 | Custom demo by <a href="https://aiwithsoul.com">AI with Soul</a></p>
+    <p style="margin-top: 0.5rem; font-size: 0.8rem;">This is a demonstration page built to showcase what's possible for your business.</p>
+</footer>
+
+</body>
+</html>
