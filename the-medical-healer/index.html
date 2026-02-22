@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Medical Healer | Johnny Batterson | Natural Energy Healing | Australia & International</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --terracotta: #D4967D;
+            --terracotta-light: #E4B5A3;
+            --terracotta-dark: #B87A60;
+            --teal: #3F4A49;
+            --teal-light: #5A6665;
+            --teal-dark: #2A3332;
+            --cream: #FAF8F6;
+            --cream-dark: #F0EDE9;
+            --white: #FFFFFF;
+            --text: #3F4A49;
+            --text-light: #6B7776;
+            --text-dim: #9AA3A2;
+            --black: #1a1a1a;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(12px);
+            padding: 0.8rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(63,74,73,0.06);
+        }
+
+        .nav-brand {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--teal-dark);
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.78rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--terracotta); }
+
+        .nav-cta {
+            background: var(--terracotta);
+            color: var(--white) !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 600 !important;
+        }
+
+        .nav-cta:hover { background: var(--terracotta-dark); }
+        .mobile-menu { display: none; cursor: pointer; color: var(--teal); font-size: 1.5rem; }
+
+        /* HERO - TRANSFORMATION FIRST */
+        .hero {
+            min-height: 100vh;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            padding: 7rem 2rem 4rem;
+            position: relative;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-label {
+            font-size: 0.7rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 400;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            color: var(--black);
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--terracotta);
+        }
+
+        .hero-stat-row {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat .number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--terracotta);
+            line-height: 1;
+        }
+
+        .hero-stat .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-light);
+            margin-top: 0.25rem;
+        }
+
+        .hero-p {
+            font-size: 1rem;
+            font-weight: 300;
+            color: var(--text-light);
+            max-width: 500px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .btn-terracotta {
+            background: var(--terracotta);
+            color: var(--white);
+        }
+
+        .btn-terracotta:hover {
+            background: var(--terracotta-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(63,74,73,0.2);
+            color: var(--text);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--terracotta);
+            color: var(--terracotta);
+        }
+
+        .hero-image {
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        /* TRANSFORMATIONS TICKER */
+        .transformations-bar {
+            background: var(--teal-dark);
+            color: var(--white);
+            padding: 1.2rem 2rem;
+            overflow: hidden;
+        }
+
+        .ticker-wrap {
+            display: flex;
+            gap: 3rem;
+            animation: ticker 30s linear infinite;
+            white-space: nowrap;
+        }
+
+        .ticker-item {
+            font-size: 0.8rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .ticker-item .result {
+            color: var(--terracotta-light);
+            font-weight: 600;
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* SECTIONS */
+        section { padding: 6rem 2rem; }
+        .container { max-width: 1100px; margin: 0 auto; }
+
+        .section-label {
+            font-size: 0.7rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 400;
+            color: var(--black);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .text-center { text-align: center; }
+        .text-center .section-subtitle { margin: 0 auto; }
+
+        /* OUTCOMES GRID */
+        .outcomes { background: var(--cream); }
+
+        .outcomes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .outcome-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: all 0.3s;
+        }
+
+        .outcome-card:hover {
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+            transform: translateY(-2px);
+        }
+
+        .outcome-condition {
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .outcome-card blockquote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            font-style: italic;
+            color: var(--text);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .outcome-card blockquote::before {
+            content: '\201C';
+            font-size: 2.5rem;
+            color: var(--terracotta);
+            line-height: 0;
+            vertical-align: -0.4rem;
+            margin-right: 0.15rem;
+        }
+
+        .outcome-result {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--terracotta-dark);
+            padding: 0.5rem 0;
+            border-top: 1px solid var(--cream-dark);
+        }
+
+        .outcome-author {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            margin-top: 0.25rem;
+        }
+
+        /* ABOUT */
+        .about { background: var(--white); }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .about-image {
+            aspect-ratio: 1;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 1.25rem;
+            font-size: 0.95rem;
+        }
+
+        .about-text p:first-of-type::first-letter {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            float: left;
+            line-height: 0.8;
+            margin-right: 0.5rem;
+            color: var(--terracotta);
+            font-weight: 600;
+        }
+
+        .fact-row {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .fact {
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 0.4rem 0.8rem;
+            border: 1px solid var(--cream-dark);
+            border-radius: 3px;
+            color: var(--text-light);
+        }
+
+        /* SERVICES */
+        .services { background: var(--cream); }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+            transform: translateY(-2px);
+        }
+
+        .service-type {
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--black);
+        }
+
+        .service-card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            flex: 1;
+        }
+
+        .service-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1.25rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--cream-dark);
+        }
+
+        .service-price {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--terracotta);
+        }
+
+        .service-price .from {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-dim);
+            display: block;
+        }
+
+        .service-duration {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            text-align: right;
+        }
+
+        /* HOW IT WORKS */
+        .process { background: var(--teal-dark); color: var(--white); }
+        .process .section-label { color: var(--terracotta-light); }
+        .process .section-title { color: var(--cream); }
+        .process .section-subtitle { color: rgba(255,255,255,0.5); }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .step-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--terracotta);
+            line-height: 1;
+            margin-bottom: 0.75rem;
+        }
+
+        .step h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--cream);
+            margin-bottom: 0.5rem;
+        }
+
+        .step p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.6;
+        }
+
+        /* MORE TESTIMONIALS */
+        .testimonials { background: var(--white); }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            padding: 2rem;
+            border-radius: 8px;
+            background: var(--cream);
+            border-left: 3px solid var(--terracotta);
+        }
+
+        .testimonial-card blockquote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-card blockquote::before {
+            content: '\201C';
+            font-size: 2.5rem;
+            color: var(--terracotta);
+            line-height: 0;
+            vertical-align: -0.4rem;
+            margin-right: 0.15rem;
+        }
+
+        .testimonial-author {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .testimonial-condition {
+            font-size: 0.7rem;
+            color: var(--terracotta);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* CTA / CONTACT */
+        .cta-section {
+            background: linear-gradient(160deg, var(--teal-dark) 0%, var(--teal) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .cta-section .section-title { color: var(--cream); }
+
+        .cta-subtitle {
+            color: rgba(255,255,255,0.6);
+            font-size: 1rem;
+            max-width: 500px;
+            margin: 0 auto 2rem;
+            font-weight: 300;
+        }
+
+        .contact-methods {
+            display: flex;
+            gap: 3rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .contact-method { text-align: center; }
+
+        .contact-method .icon { font-size: 1.3rem; margin-bottom: 0.4rem; }
+
+        .contact-method .label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(255,255,255,0.3);
+            margin-bottom: 0.15rem;
+        }
+
+        .contact-method .value { color: var(--terracotta-light); font-size: 0.95rem; }
+        .contact-method a { color: var(--terracotta-light); text-decoration: none; }
+        .contact-method a:hover { color: var(--white); }
+
+        /* FOOTER */
+        footer {
+            background: var(--teal-dark);
+            color: rgba(255,255,255,0.3);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.8rem;
+        }
+
+        footer a { color: var(--terracotta); text-decoration: none; }
+
+        /* DEMO BANNER */
+        .demo-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--terracotta);
+            color: var(--white);
+            text-align: center;
+            padding: 0.7rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 1000;
+            letter-spacing: 0.5px;
+        }
+
+        .demo-banner a { color: var(--white); text-decoration: underline; }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero-container { grid-template-columns: 1fr; gap: 2rem; }
+            .hero-image { max-height: 350px; }
+            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .nav-links { display: none; }
+            .mobile-menu { display: block; }
+            section { padding: 4rem 1.5rem; }
+            .hero { padding-top: 5rem; }
+        }
+
+        html { scroll-behavior: smooth; scroll-padding-top: 60px; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-content > * {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+        .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
+        .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
+        .hero-content > *:nth-child(4) { animation-delay: 0.4s; }
+        .hero-content > *:nth-child(5) { animation-delay: 0.5s; }
+        .hero-content > *:nth-child(6) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+
+<!-- DEMO BANNER -->
+<div class="demo-banner">
+    Custom demo built for The Medical Healer by <a href="https://aiwithsoul.com">AI with Soul</a> - Love it? Let's chat about making it yours.
+</div>
+
+<!-- NAV -->
+<nav>
+    <a href="#" class="nav-brand">The Medical Healer</a>
+    <span class="mobile-menu">&#9776;</span>
+    <ul class="nav-links">
+        <li><a href="#outcomes">Results</a></li>
+        <li><a href="#about">About Johnny</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">How It Works</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#start" class="nav-cta">Get Started</a></li>
+    </ul>
+</nav>
+
+<!-- HERO - TRANSFORMATION FIRST -->
+<section class="hero">
+    <div class="hero-container">
+        <div class="hero-content">
+            <div class="hero-label">Natural Energy Healing - Australia & International</div>
+            <h1>Where Medicine<br>Can't Reach,<br><em>Healing Begins</em></h1>
+            <div class="hero-stat-row">
+                <div class="hero-stat">
+                    <div class="number">20+</div>
+                    <div class="label">Years Experience</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="number">100%</div>
+                    <div class="label">Kidney Recovery</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="number">25%</div>
+                    <div class="label">Fibroid Reduction in 2 Sessions</div>
+                </div>
+            </div>
+            <p class="hero-p">Targeted energy healing for physical illness, emotional imbalance and spiritual recovery. In-person across Australia's east coast or distance sessions worldwide via Google Meet.</p>
+            <div class="hero-buttons">
+                <a href="#start" class="btn btn-terracotta">Begin Your Healing</a>
+                <a href="#outcomes" class="btn btn-outline">See Client Results</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.squarespace-cdn.com/content/v1/64ec50899ff0a42d8f951458/e67a6283-5c1d-4d51-b8cb-69d234a5abf7/IMG_0341.jpg" alt="Johnny Batterson - The Medical Healer">
+        </div>
+    </div>
+</section>
+
+<!-- TRANSFORMATION TICKER -->
+<div class="transformations-bar">
+    <div class="ticker-wrap">
+        <div class="ticker-item"><span class="result">Stage 2 Kidney Failure</span> - Kidneys now 100%</div>
+        <div class="ticker-item"><span class="result">7 Years Depression</span> - "I AM FREE"</div>
+        <div class="ticker-item"><span class="result">12cm Fibroid</span> - 25% reduced in 2 sessions</div>
+        <div class="ticker-item"><span class="result">Gallbladder Emergency</span> - Surgery no longer needed</div>
+        <div class="ticker-item"><span class="result">Infant Bone Diagnosis</span> - "Bone is healing, repairing itself"</div>
+        <div class="ticker-item"><span class="result">Tongue Cancer</span> - Pathology came back clear</div>
+        <div class="ticker-item"><span class="result">14-Day Bleeding</span> - Stopped almost immediately</div>
+        <div class="ticker-item"><span class="result">Heart Palpitations</span> - Gone after distance healing</div>
+        <!-- Duplicate for seamless loop -->
+        <div class="ticker-item"><span class="result">Stage 2 Kidney Failure</span> - Kidneys now 100%</div>
+        <div class="ticker-item"><span class="result">7 Years Depression</span> - "I AM FREE"</div>
+        <div class="ticker-item"><span class="result">12cm Fibroid</span> - 25% reduced in 2 sessions</div>
+        <div class="ticker-item"><span class="result">Gallbladder Emergency</span> - Surgery no longer needed</div>
+        <div class="ticker-item"><span class="result">Infant Bone Diagnosis</span> - "Bone is healing, repairing itself"</div>
+        <div class="ticker-item"><span class="result">Tongue Cancer</span> - Pathology came back clear</div>
+        <div class="ticker-item"><span class="result">14-Day Bleeding</span> - Stopped almost immediately</div>
+        <div class="ticker-item"><span class="result">Heart Palpitations</span> - Gone after distance healing</div>
+    </div>
+</div>
+
+<!-- CLIENT OUTCOMES - THE MAIN EVENT -->
+<section class="outcomes" id="outcomes">
+    <div class="container text-center">
+        <div class="section-label">Real Results</div>
+        <h2 class="section-title">Transformations That Speak for Themselves</h2>
+        <p class="section-subtitle">These are the words of real clients. Their conditions. Their outcomes. Their lives changed.</p>
+
+        <div class="outcomes-grid">
+            <div class="outcome-card">
+                <div class="outcome-condition">Stage 2 Kidney Failure</div>
+                <blockquote>Johnny is a true healer, he helped my granddaughter she was in stage 2 Kidney Failure, her kidneys are now working 100% she is doing fantastic.</blockquote>
+                <div class="outcome-result">Kidneys restored to full function</div>
+                <div class="outcome-author">Juanita C.</div>
+            </div>
+
+            <div class="outcome-card">
+                <div class="outcome-condition">7 Years Suicidal Depression</div>
+                <blockquote>I AM FREE... I just felt great, the kind of great that I hadn't ever felt before. After a decade of struggle, the depression ended.</blockquote>
+                <div class="outcome-result">Depression lifted - joy restored</div>
+                <div class="outcome-author">Stephanie S.</div>
+            </div>
+
+            <div class="outcome-card">
+                <div class="outcome-condition">Gallbladder Emergency</div>
+                <blockquote>Sitting in ED with pain like there is no tomorrow. Your hands are magical. I have not gone through one bit of pain and removal wasn't needed.</blockquote>
+                <div class="outcome-result">Surgery avoided - pain eliminated</div>
+                <div class="outcome-author">Bianca A.</div>
+            </div>
+
+            <div class="outcome-card">
+                <div class="outcome-condition">Irlens Syndrome - 12 Year Old</div>
+                <blockquote>His right eye is crystal clear... both eyes are crystal clear. Reduced migraine severity, improved without glasses.</blockquote>
+                <div class="outcome-result">Vision cleared - no glasses needed</div>
+                <div class="outcome-author">Helen C.</div>
+            </div>
+
+            <div class="outcome-card">
+                <div class="outcome-condition">14-Day Bleeding Disorder</div>
+                <blockquote>I stopped bleeding almost immediately and haven't since that day. The intrusive thoughts lifted and mental clarity returned.</blockquote>
+                <div class="outcome-result">Bleeding stopped - clarity returned</div>
+                <div class="outcome-author">Alexandria B.</div>
+            </div>
+
+            <div class="outcome-card">
+                <div class="outcome-condition">Heart Palpitations - Germany</div>
+                <blockquote>The heart tumbling is over... It's over since Monday. After 7-8 weeks of palpitations, they ceased completely by distance.</blockquote>
+                <div class="outcome-result">Palpitations gone - distance healing</div>
+                <div class="outcome-author">Elke R., Germany</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT JOHNNY -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-image">
+                <img src="https://images.squarespace-cdn.com/content/v1/64ec50899ff0a42d8f951458/e67a6283-5c1d-4d51-b8cb-69d234a5abf7/IMG_0341.jpg" alt="Johnny Batterson">
+            </div>
+            <div class="about-text">
+                <div class="section-label">The Healer</div>
+                <h2 class="section-title">Johnny Batterson</h2>
+                <p>Nearly two decades ago, Johnny was bombarded by the Spiritual Realm - faces in the backs of cars, in the trees, on his work machinery. After six months of relentless contact, he finally gave in and asked what they wanted. The answer was clear: become a healer.</p>
+                <p>In 2018, his Spirit Guides urged him to perform a healing on a family friend with an inoperable brain tumor. During an eight-hour drive to the Sunshine Coast, 39 High Powered Spirit Guides introduced themselves in a profound ceremony. The healing was a success - and Johnny knew his purpose was real.</p>
+                <p>Today he works with clients across Australia and internationally, channeling targeted energy healing for conditions from chronic pain to terminal illness. He works as a vessel - not through force or personal will, but through alignment with a higher power.</p>
+                <div class="fact-row">
+                    <span class="fact">Medical Healer</span>
+                    <span class="fact">Medium</span>
+                    <span class="fact">Psychic Detective</span>
+                    <span class="fact">Healer Coach</span>
+                    <span class="fact">20+ Years</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES WITH CLEAR PRICING -->
+<section class="services" id="services">
+    <div class="container text-center">
+        <div class="section-label">How We Can Help</div>
+        <h2 class="section-title">Services & Investment</h2>
+        <p class="section-subtitle">Every healing journey is personalised. Below are starting rates - Johnny reviews your intake form and provides a tailored treatment plan.</p>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-type">Face to Face</div>
+                <h3>In-Person Healing</h3>
+                <p>Hands-on healing at your home or our therapy room. Johnny travels the east coast from Sydney to Brisbane. First appointments include full clearing, discussion and investigation to set your healing in motion.</p>
+                <div class="service-footer">
+                    <div class="service-price"><span class="from">From</span>$660</div>
+                    <div class="service-duration">90-120 min<br>Melbourne to Brisbane</div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-type">Worldwide</div>
+                <h3>Distance Healing</h3>
+                <p>Powerful 1:1 sessions via recorded Google Meet video. Simply lay down, relax, and allow the healing to work. Clients around the world - including Germany, the UK, and across Australia - report profound results from distance sessions.</p>
+                <div class="service-footer">
+                    <div class="service-price"><span class="from">From</span>$550</div>
+                    <div class="service-duration">~90 min<br>Google Meet</div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-type">Deep Transformation</div>
+                <h3>Healing Program</h3>
+                <p>Six to eight full healing sessions for those with compounded physical illness, anxiety, depression, or trauma. Work closely with Johnny over time to close the doors on what no longer serves you and transform the course of your life.</p>
+                <div class="service-footer">
+                    <div class="service-price"><span class="from">Programme</span>16+ hrs</div>
+                    <div class="service-duration">6-8 sessions<br>Tailored pricing</div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-type">For Other Healers</div>
+                <h3>Coaching & Retreats</h3>
+                <p>Complete access to Johnny helping you develop your own unique gifts and abilities. Deep-dive sessions into becoming an exceptional healer and clearer channel. For beginners and experienced healers ready to level up.</p>
+                <div class="service-footer">
+                    <div class="service-price"><span class="from">From</span>$1,100</div>
+                    <div class="service-duration">3 hours per session<br>or 6-session package</div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-type">Little Ones</div>
+                <h3>Infants & Children</h3>
+                <p>Children are remarkably receptive to energy healing. Behavioural challenges, ADHD, autism, serious medical conditions, colic, breathing difficulties - gentle, safe healing for your child online or in-person.</p>
+                <div class="service-footer">
+                    <div class="service-price"><span class="from">From</span>$550</div>
+                    <div class="service-duration">~60 min<br>In-person or online</div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-type">Critical & Terminal</div>
+                <h3>VIP Intensive</h3>
+                <p>For those critically ill or facing terminal diagnosis. Johnny travels Australia-wide and internationally for dedicated, intensive healing over multiple days. Focused attention on life-threatening conditions with ongoing support.</p>
+                <div class="service-footer">
+                    <div class="service-price"><span class="from">From</span>$10,000+</div>
+                    <div class="service-duration">Multi-day intensive<br>Travel included</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="process" id="process">
+    <div class="container text-center">
+        <div class="section-label">Your Healing Journey</div>
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">A simple, guided process from first contact to transformation.</p>
+
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">01</div>
+                <h3>Complete the Intake Form</h3>
+                <p>Tell us about your condition, your history, and what you're hoping to achieve. This helps Johnny understand your unique situation before we connect.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">02</div>
+                <h3>Personalised Treatment Plan</h3>
+                <p>Johnny reviews every case personally. We'll get in touch with a recommended number of sessions, approach, and transparent quote tailored to you.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">03</div>
+                <h3>Begin Your Sessions</h3>
+                <p>In-person or via distance on Google Meet. All you need to do is lay down and relax. Johnny works with his Guides to clear, heal, and restore.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">04</div>
+                <h3>Experience the Shift</h3>
+                <p>Many clients feel changes from their very first session. Pain relief, mental clarity, emotional release, improved sleep - real transformation unfolds.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MORE TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+    <div class="container text-center">
+        <div class="section-label">More Stories</div>
+        <h2 class="section-title">Lives Changed Through Healing</h2>
+
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <blockquote>A very old trauma that affected me for many years has been lifted off my heart. Johnny intuitively identified the issue without me ever mentioning it.</blockquote>
+                <div class="testimonial-author">Suzanne</div>
+                <div class="testimonial-condition">Old Trauma - Gold Coast</div>
+            </div>
+
+            <div class="testimonial-card">
+                <blockquote>A wave of grief left my body. Tears run down my face as I forgive. I found a feeling of safety I haven't known before.</blockquote>
+                <div class="testimonial-author">Christina H.</div>
+                <div class="testimonial-condition">Grief & Emotional Pain</div>
+            </div>
+
+            <div class="testimonial-card">
+                <blockquote>I could feel the energy as though it was physically working on the inside. My diagnosed condition was cured.</blockquote>
+                <div class="testimonial-author">Vicki L.</div>
+                <div class="testimonial-condition">Diagnosed Illness</div>
+            </div>
+
+            <div class="testimonial-card">
+                <blockquote>I was in such pain in tears asking for help... within 2 weeks my severe digestive problems resolved completely and normal function restored.</blockquote>
+                <div class="testimonial-author">Ziarra O.</div>
+                <div class="testimonial-condition">Severe Digestive Problems</div>
+            </div>
+
+            <div class="testimonial-card">
+                <blockquote>I felt a veil lifting up from me and emotions came up. A lasting sense of peace I hadn't felt before.</blockquote>
+                <div class="testimonial-author">Isabelle G.</div>
+                <div class="testimonial-condition">Emotional Release</div>
+            </div>
+
+            <div class="testimonial-card">
+                <blockquote>Jonny has healed my soul and body. The heaviness I carried is gone. He is a true healer.</blockquote>
+                <div class="testimonial-author">Diane</div>
+                <div class="testimonial-condition">Spiritual Heaviness</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA / GET STARTED -->
+<section class="cta-section" id="start">
+    <div class="container">
+        <div class="section-label" style="color: var(--terracotta-light);">Ready?</div>
+        <h2 class="section-title">Begin Your Healing Journey</h2>
+        <p class="cta-subtitle">Complete the online intake form and Johnny will personally review your case. No obligation - just the first step toward feeling different.</p>
+
+        <div style="margin-bottom: 2rem;">
+            <a href="https://form.jotform.com/231573125664860" target="_blank" class="btn btn-terracotta" style="font-size: 0.9rem; padding: 1rem 2.5rem;">Complete the Intake Form</a>
+        </div>
+
+        <div class="contact-methods">
+            <div class="contact-method">
+                <div class="icon">&#9993;</div>
+                <div class="label">Email</div>
+                <div class="value"><a href="mailto:themedicalhealer@gmail.com">themedicalhealer@gmail.com</a></div>
+            </div>
+            <div class="contact-method">
+                <div class="icon">&#128247;</div>
+                <div class="label">Instagram</div>
+                <div class="value"><a href="https://instagram.com/themedicalhealer" target="_blank">@themedicalhealer</a></div>
+            </div>
+            <div class="contact-method">
+                <div class="icon">&#128483;</div>
+                <div class="label">Facebook</div>
+                <div class="value"><a href="https://facebook.com/themedicalhealer" target="_blank">The Medical Healer</a></div>
+            </div>
+        </div>
+
+        <p style="font-size: 0.75rem; color: rgba(255,255,255,0.3); margin-top: 2rem; font-style: italic;">Based in Melbourne. In-person sessions: Sydney to Brisbane. Distance sessions: worldwide via Google Meet.</p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>The Medical Healer &copy; 2026 | Johnny Batterson | Australia & International</p>
+    <p style="margin-top: 0.5rem;">Demo redesign by <a href="https://aiwithsoul.com">AI with Soul</a></p>
+</footer>
+
+</body>
+</html>
