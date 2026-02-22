@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Healing Therapies | Faith Challinor-Wheatley | Swansea, Wales</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --gold: #c4a265;
+            --gold-light: #dac494;
+            --gold-dark: #9e7e45;
+            --deep: #1a1712;
+            --warm-dark: #2c2520;
+            --warm-mid: #3d332c;
+            --cream: #faf7f2;
+            --cream-dark: #f0ebe3;
+            --text: #3d332c;
+            --text-light: #7a6e63;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            color: var(--text);
+            background: var(--cream);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(26, 23, 18, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 0.8rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--gold);
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--white); }
+
+        .nav-cta {
+            background: var(--gold);
+            color: var(--deep) !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 600 !important;
+        }
+
+        .nav-cta:hover { background: var(--gold-light); }
+
+        .mobile-menu { display: none; cursor: pointer; color: var(--gold); font-size: 1.5rem; }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(160deg, rgba(26,23,18,0.82) 0%, rgba(44,37,32,0.75) 40%, rgba(61,51,44,0.7) 100%),
+                        url('https://images.unsplash.com/photo-1759670340065-d42b6d00fa4c?w=1920&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 6rem 2rem 4rem;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(196, 162, 101, 0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 50%, rgba(196, 162, 101, 0.05) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 750px;
+        }
+
+        .hero-divider {
+            width: 60px;
+            height: 1px;
+            background: var(--gold);
+            margin: 0 auto 1.5rem;
+        }
+
+        .hero-label {
+            font-size: 0.8rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 7vw, 5rem);
+            font-weight: 300;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            color: var(--cream);
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--gold);
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.75);
+            max-width: 550px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            color: var(--deep);
+        }
+
+        .btn-gold:hover {
+            background: var(--gold-light);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(196, 162, 101, 0.4);
+            color: var(--gold-light);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold);
+            color: var(--white);
+        }
+
+        /* SECTIONS */
+        section { padding: 6rem 2rem; }
+
+        .container { max-width: 1100px; margin: 0 auto; }
+
+        .section-label {
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold-dark);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 400;
+            color: var(--text);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .text-center { text-align: center; }
+        .text-center .section-subtitle { margin: 0 auto; }
+
+        /* ABOUT */
+        .about { background: var(--white); }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .about-image {
+            aspect-ratio: 3/4;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--warm-dark), var(--warm-mid)),
+                        url('https://www.soundhealingtherapies.co.uk/userfiles/image/faith_bowl.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image-text {
+            color: var(--gold-light);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            padding: 2rem;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 1.25rem;
+            font-size: 0.95rem;
+        }
+
+        .about-text p:first-of-type::first-letter {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            float: left;
+            line-height: 0.8;
+            margin-right: 0.5rem;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .credentials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .credential {
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 0.4rem 0.8rem;
+            border: 1px solid var(--cream-dark);
+            border-radius: 3px;
+            color: var(--text-light);
+        }
+
+        /* SERVICES */
+        .services { background: var(--cream); }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+            transform: translateY(-2px);
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .service-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        .service-card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .service-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--gold-dark);
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+
+        /* GROUP SESSIONS */
+        .sessions {
+            background: linear-gradient(160deg, rgba(26,23,18,0.9) 0%, rgba(44,37,32,0.88) 100%),
+                        url('https://gallery.mailchimp.com/566463966fb0a5f6d6358af68/images/4b10e542-8513-4cf9-a88d-a7e08d59c0a2.jpg') center/cover no-repeat;
+            color: var(--white);
+        }
+
+        .sessions .section-label { color: var(--gold); }
+        .sessions .section-title { color: var(--cream); }
+        .sessions .section-subtitle { color: rgba(255,255,255,0.6); }
+
+        .session-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .session-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(196, 162, 101, 0.15);
+            border-radius: 8px;
+            padding: 2.5rem 2rem;
+        }
+
+        .session-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--gold-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .session-card .location {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 1.5rem;
+        }
+
+        .session-detail {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            font-size: 0.9rem;
+        }
+
+        .session-detail .label { color: rgba(255,255,255,0.5); }
+        .session-detail .value { color: var(--cream); font-weight: 500; }
+
+        .session-price {
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .session-price .amount {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .session-price .per {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .session-note {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.4);
+            font-style: italic;
+        }
+
+        /* TESTIMONIALS */
+        .testimonials { background: var(--white); }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            padding: 2rem;
+            border-radius: 8px;
+            background: var(--cream);
+            border-left: 3px solid var(--gold);
+        }
+
+        .testimonial-card blockquote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-card blockquote::before {
+            content: '\201C';
+            font-size: 3rem;
+            color: var(--gold);
+            line-height: 0;
+            vertical-align: -0.5rem;
+            margin-right: 0.25rem;
+        }
+
+        .testimonial-author {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .testimonial-location {
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        /* SHOP */
+        .shop { background: var(--cream); }
+
+        .shop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .shop-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .shop-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--warm-dark), var(--warm-mid));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .shop-info {
+            padding: 1.5rem;
+        }
+
+        .shop-info h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .shop-info p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        /* CONTACT / CTA */
+        .contact {
+            background: linear-gradient(160deg, var(--deep) 0%, var(--warm-dark) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .contact .section-title { color: var(--cream); }
+
+        .contact-methods {
+            display: flex;
+            gap: 3rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2.5rem 0;
+        }
+
+        .contact-method {
+            text-align: center;
+        }
+
+        .contact-method .icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-method .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-method .value {
+            color: var(--gold-light);
+            font-size: 1rem;
+        }
+
+        .contact-method a {
+            color: var(--gold-light);
+            text-decoration: none;
+        }
+
+        .contact-method a:hover { color: var(--white); }
+
+        /* FOOTER */
+        footer {
+            background: var(--deep);
+            color: rgba(255,255,255,0.3);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.8rem;
+        }
+
+        footer a {
+            color: var(--gold-dark);
+            text-decoration: none;
+        }
+
+        /* DEMO BANNER */
+        .demo-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--gold);
+            color: var(--deep);
+            text-align: center;
+            padding: 0.7rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 1000;
+            letter-spacing: 0.5px;
+        }
+
+        .demo-banner a {
+            color: var(--deep);
+            text-decoration: underline;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .nav-links { display: none; }
+            .mobile-menu { display: block; }
+            section { padding: 4rem 1.5rem; }
+        }
+
+        /* SMOOTH SCROLL */
+        html { scroll-behavior: smooth; scroll-padding-top: 60px; }
+
+        /* ANIMATIONS */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-content > * {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+        .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
+        .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
+        .hero-content > *:nth-child(4) { animation-delay: 0.4s; }
+        .hero-content > *:nth-child(5) { animation-delay: 0.5s; }
+    </style>
+</head>
+<body>
+
+<!-- DEMO BANNER -->
+<div class="demo-banner">
+    Custom demo built for Sound Healing Therapies by <a href="https://aiwithsoul.com">AI with Soul</a> - Love it? Let's chat about making it yours.
+</div>
+
+<!-- NAV -->
+<nav>
+    <a href="#" class="nav-brand">Sound Healing Therapies</a>
+    <span class="mobile-menu">&#9776;</span>
+    <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#sessions">Sessions</a></li>
+        <li><a href="#testimonials">Kind Words</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#contact" class="nav-cta">Book a Session</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-label">Swansea, Wales</div>
+        <div class="hero-divider"></div>
+        <h1>Healing Through<br>the Power of <em>Sound</em></h1>
+        <p>Over 40 years of experience in holistic sound therapy. Group sound baths, one-to-one healing sessions, and registered Light Melodics technique.</p>
+        <div class="hero-buttons">
+            <a href="#sessions" class="btn btn-gold">View Upcoming Sessions</a>
+            <a href="#services" class="btn btn-outline">Explore Therapies</a>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-image" style="background: url('https://www.soundhealingtherapies.co.uk/userfiles/image/profile%20picture1.jpg') center top/cover no-repeat;">
+            </div>
+            <div class="about-text">
+                <div class="section-label">About Faith</div>
+                <h2 class="section-title">Faith Challinor-Wheatley</h2>
+                <p>Faith's journey with sound began in the Welsh choirs of the 1960s, competing at the Llangollen International Musical Eisteddfod as a young singer. After decades working in holistic therapies - opening her first clinic in Swansea in 1976 - a near-fatal road accident in 1998 changed everything.</p>
+                <p>The accident damaged her vocal cords, and her recovery journey led her deeper into the healing power of sound and vibration. What began as personal healing became her life's work - developing Light Melodics, a registered therapeutic technique that combines aromatic oils with intuitive vocal healing.</p>
+                <p>Today Faith is one of Wales' most experienced sound healing practitioners, holding memberships with the College of Sound Healing, the Sound Healers Association, and the International Council of Holistic Therapists.</p>
+                <div class="credentials">
+                    <span class="credential">College of Sound Healing</span>
+                    <span class="credential">Sound Healers Association</span>
+                    <span class="credential">HPAI Member (since 1997)</span>
+                    <span class="credential">Reiki Master/Teacher</span>
+                    <span class="credential">Light Melodics - Registered 2005</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+    <div class="container text-center">
+        <div class="section-label">Healing Modalities</div>
+        <h2 class="section-title">How Faith Can Help You</h2>
+        <p class="section-subtitle">Whether you're seeking deep relaxation, emotional release, or relief from physical tension - sound therapy works on every level.</p>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">&#127926;</div>
+                <h3>Sound & Gong Bath</h3>
+                <p>Immerse yourself in waves of healing sound from Tibetan singing bowls, crystal bowls, gongs, and chimes. A deeply relaxing group experience that calms the nervous system and restores inner balance.</p>
+                <span class="service-tag">Group - Monthly Sessions</span>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">&#10024;</div>
+                <h3>Light Melodics</h3>
+                <p>Faith's own registered technique combining the healing properties of aromatic oils with intuitive vocal sound therapy. A unique, deeply personal treatment developed over decades of practice.</p>
+                <span class="service-tag">1:1 Sessions - Faith's Signature</span>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">&#127764;</div>
+                <h3>1:1 Sound Healing</h3>
+                <p>Individual sessions using singing bowls, sounding bowls, and voice to stimulate your body's natural healing processes. Balances the subtle energy centres and promotes deep cellular relaxation.</p>
+                <span class="service-tag">1:1 - In Person or Phone</span>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">&#128156;</div>
+                <h3>Sounding Bowls Stress-Release</h3>
+                <p>A therapeutic programme incorporating sounding bowls and voice soundwork specifically designed for stress relief, emotional engagement, and deep well-being restoration.</p>
+                <span class="service-tag">1:1 Programme</span>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">&#128588;</div>
+                <h3>Reiki Healing</h3>
+                <p>As a qualified Reiki Master and Teacher, Faith offers gentle energy healing that promotes balance and harmony throughout your whole being. Available as standalone or combined with sound work.</p>
+                <span class="service-tag">1:1 Sessions</span>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">&#127891;</div>
+                <h3>Workshops & Training</h3>
+                <p>Learn the foundations of sound healing through hands-on workshops. Experience the instruments, understand the science, and discover your own healing voice in a supportive group setting.</p>
+                <span class="service-tag">Group - See Events</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GROUP SESSIONS -->
+<section class="sessions" id="sessions">
+    <div class="container text-center">
+        <div class="section-label">Upcoming Sessions</div>
+        <h2 class="section-title">Sound & Gong Bath Evenings</h2>
+        <p class="section-subtitle">One hour of deep healing immersion. Bring a yoga mat, blanket, and cushion. Advance booking essential.</p>
+
+        <div class="session-cards">
+            <div class="session-card">
+                <h3>Dove Workshop</h3>
+                <div class="location">Roman Road, Banwen, Nr Neath SA10 9LW</div>
+                <div class="session-detail">
+                    <span class="label">When</span>
+                    <span class="value">3rd Wednesday, Monthly</span>
+                </div>
+                <div class="session-detail">
+                    <span class="label">Time</span>
+                    <span class="value">7:00 - 8:00 PM</span>
+                </div>
+                <div class="session-detail">
+                    <span class="label">Bring</span>
+                    <span class="value">Yoga mat, blanket, cushion</span>
+                </div>
+                <div class="session-price">
+                    <div class="amount">&pound;12</div>
+                    <div class="per">per person - cash on arrival</div>
+                </div>
+            </div>
+
+            <div class="session-card">
+                <h3>Sound Medicine Lodge</h3>
+                <div class="location">Swansea SA2</div>
+                <div class="session-detail">
+                    <span class="label">When</span>
+                    <span class="value">2nd Thursday, Monthly</span>
+                </div>
+                <div class="session-detail">
+                    <span class="label">Time</span>
+                    <span class="value">7:00 - 8:00 PM</span>
+                </div>
+                <div class="session-detail">
+                    <span class="label">Bring</span>
+                    <span class="value">Yoga mat, blanket, cushion</span>
+                </div>
+                <div class="session-price">
+                    <div class="amount">&pound;12</div>
+                    <div class="per">per person - cash on arrival</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="session-note">Other day and evening sessions available upon request. Contact Faith to arrange.</p>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+    <div class="container text-center">
+        <div class="section-label">Kind Words</div>
+        <h2 class="section-title">What Clients Say</h2>
+
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <blockquote>I arrived for treatment feeling agitated, physically exhausted, my mind muddled. I cannot analyse why I should now feel more positive - I can only say something within the therapy has enabled me to feel different.</blockquote>
+                <div class="testimonial-author">Mrs P. Neole</div>
+                <div class="testimonial-location">Swansea</div>
+            </div>
+
+            <div class="testimonial-card">
+                <blockquote>I was suffering from depression, anxiety, and had severe chest pains caused by stress. The treatment has had such an amazing and lasting effect on both my physical and emotional problems.</blockquote>
+                <div class="testimonial-author">Mrs S. Stickley</div>
+                <div class="testimonial-location">Shropshire</div>
+            </div>
+
+            <div class="testimonial-card">
+                <blockquote>It has revealed to my consciousness various insights that were deeply buried in my subconscious. I feel as though I am really believing my 'self' at last.</blockquote>
+                <div class="testimonial-author">C. Lloyd</div>
+                <div class="testimonial-location">Swansea</div>
+            </div>
+
+            <div class="testimonial-card">
+                <blockquote>I thoroughly enjoyed my sound healing therapy, it has been very valuable to me. I can still recall the feelings of peace and contentment I experienced during the sessions.</blockquote>
+                <div class="testimonial-author">C. Francis</div>
+                <div class="testimonial-location">Swansea</div>
+            </div>
+
+            <div class="testimonial-card">
+                <blockquote>I have definitely benefited from the sessions. Mostly an improvement in sleeping patterns allowing for more clear thought and general clarity. Feeling more centred has allowed me to make positive decisions.</blockquote>
+                <div class="testimonial-author">F. Wheatley</div>
+                <div class="testimonial-location">Swansea</div>
+            </div>
+
+            <div class="testimonial-card">
+                <blockquote>The compositions have brought a feeling of being cocooned and energised by the deep sense of unconditional love that surrounded me.</blockquote>
+                <div class="testimonial-author">A.K. Thomas</div>
+                <div class="testimonial-location">Loughor</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SHOP -->
+<section class="shop" id="shop">
+    <div class="container text-center">
+        <div class="section-label">Healing at Home</div>
+        <h2 class="section-title">Therapeutic CDs</h2>
+        <p class="section-subtitle">Continue your healing journey between sessions with Faith's recorded sound compositions.</p>
+
+        <div class="shop-grid">
+            <div class="shop-card">
+                <div class="shop-image" style="background: url('https://www.soundhealingtherapies.co.uk/userfiles/image/medium/albumn-copver.jpg') center/cover no-repeat;">&#8203;</div>
+                <div class="shop-info">
+                    <h3>Sound Odyssey Cosmic Alignment</h3>
+                    <p>Echoes of Sacred Sound Chambers of Peace. Inspired and composed during the spring equinox and lunar eclipse of 2015. Recorded at Craig Y Nos Castle in the Upper Swansea Valley.</p>
+                    <a href="#contact" class="btn btn-gold" style="font-size: 0.75rem; padding: 0.6rem 1.2rem;">Enquire</a>
+                </div>
+            </div>
+
+            <div class="shop-card">
+                <div class="shop-image" style="background: url('https://www.soundhealingtherapies.co.uk/images/cd-cover-peace.png') center/cover no-repeat;">&#8203;</div>
+                <div class="shop-info">
+                    <h3>The Peace Mantra Odyssey</h3>
+                    <p>A musical journey through the spheres of Light, Sound and Silence for Inner Peace. Designed to rejuvenate, regenerate, and help restore holistic resonance.</p>
+                    <a href="#contact" class="btn btn-gold" style="font-size: 0.75rem; padding: 0.6rem 1.2rem;">Enquire</a>
+                </div>
+            </div>
+
+            <div class="shop-card">
+                <div class="shop-image" style="background: url('https://www.soundhealingtherapies.co.uk/images/cd-cover.png') center/cover no-repeat;">&#8203;</div>
+                <div class="shop-info">
+                    <h3>Healing Ambient Chants</h3>
+                    <p>Essence of chants from the heart. Features spoken peace mantra introduction followed by six inspirational chants with sounding bowls, singing bowls, crystal bowls, and gongs.</p>
+                    <a href="#contact" class="btn btn-gold" style="font-size: 0.75rem; padding: 0.6rem 1.2rem;">Enquire</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="section-label" style="color: var(--gold);">Get in Touch</div>
+        <h2 class="section-title">Book a Session with Faith</h2>
+        <p style="color: rgba(255,255,255,0.6); max-width: 500px; margin: 0 auto 1rem; font-size: 0.95rem;">Whether you're curious about sound healing or ready to book, Faith would love to hear from you.</p>
+
+        <div class="contact-methods">
+            <div class="contact-method">
+                <div class="icon">&#128222;</div>
+                <div class="label">Phone</div>
+                <div class="value"><a href="tel:01792290458">01792 290458</a></div>
+            </div>
+            <div class="contact-method">
+                <div class="icon">&#128241;</div>
+                <div class="label">Mobile</div>
+                <div class="value"><a href="tel:07745311210">07745 311210</a></div>
+            </div>
+            <div class="contact-method">
+                <div class="icon">&#9993;</div>
+                <div class="label">Email</div>
+                <div class="value"><a href="mailto:faithcomplementaryholistics@yahoo.co.uk">faithcomplementaryholistics@yahoo.co.uk</a></div>
+            </div>
+        </div>
+
+        <div style="margin-top: 1rem;">
+            <a href="mailto:faithcomplementaryholistics@yahoo.co.uk?subject=Enquiry%20about%20Sound%20Healing" class="btn btn-gold" style="font-size: 0.9rem;">Send an Enquiry</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>Sound Healing Therapies &copy; 2026 | Faith Challinor-Wheatley | Swansea, Wales</p>
+    <p style="margin-top: 0.5rem;">Demo redesign by <a href="https://aiwithsoul.com">AI with Soul</a></p>
+</footer>
+
+</body>
+</html>
